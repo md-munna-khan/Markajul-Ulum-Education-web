@@ -18,7 +18,7 @@ import madraha2 from '../assets/madraha2.jpg'
 
 const Banner = () => {
   return (
-    <div className='container px-6 py-10 mx-auto'>
+    <div className='container px-6 py-4 mx-auto'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -37,7 +37,7 @@ const Banner = () => {
        
        <SwiperSlide>
         <div className="relative">
-          <img src={madraha1} alt="University 1" className="w-full h-64 md:h-96 lg:h-[600px] object-cover" style={{ objectFit: 'cover' }} />
+          <img src={madraha1} alt="University 1" className="w-full  h-64 md:h-96 lg:h-[600px] object-cover" style={{ objectFit: 'cover' }} />
           <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-50 p-2">
            
           </div>
@@ -45,7 +45,7 @@ const Banner = () => {
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative">
-          <img src={madraha2} alt="University 2" className="w-full h-64 md:h-96 lg:h-[600px] object-cover" style={{ objectFit: 'cover' }} />
+          <img src={madraha2} alt="University 2" className="w-full h-64 md:h-96 lg:h-[600px]  object-cover" style={{ objectFit: 'cover' }} />
           <div className="absolute bottom-0 left-0 right-0 bg-gray-800 bg-opacity-50 p-2">
            
           </div>

@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const syllabusData = [
   {
@@ -104,12 +106,29 @@ const syllabusData = [
 ];
 
 const SyllabusPlan = () => {
+  useEffect(() => {
+    // Initialize AOS animation
+    AOS.init({
+      duration: 1000, // Duration of the animation
+      once: false, // To trigger the animation every time the element comes into view
+    });
+
+    return () => {
+      // Refresh AOS when the component is unmounted or updated
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold text-center mb-6">মারকাযুল উলূম নৈশ মাদরাসার সিলেবাস</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {syllabusData.map((item, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500">
+          <div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-blue-500"
+            data-aos="zoom-out-right" // Apply AOS fade-up animation to each card
+          >
             <h2 className="text-xl font-semibold text-blue-600 mb-3">{item.year}</h2>
             <ul className="list-disc pl-6 space-y-2">
               {item.subjects.map((subject, idx) => (

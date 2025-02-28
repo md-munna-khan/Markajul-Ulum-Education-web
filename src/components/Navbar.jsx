@@ -12,7 +12,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex items-center gap-2">
                     <img className="w-12 h-12" src={logo} alt="Madrasah Logo" />
-                    <span className="text-xl font-bold hidden md:block">Madrasah</span>
+                    <span className="text-xl  hidden md:block">Jamia Faruqia Markajul Ulum</span>
                 </div>
 
                 {/* Desktop Menu */}

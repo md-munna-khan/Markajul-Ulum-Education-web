@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import logo from "../assets/madraha_logo-removebg-preview.png";
 
 const Footer = () => {
@@ -21,20 +21,41 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h2 className="text-lg font-semibold mb-3">দ্রুত লিঙ্কসমূহ</h2>
-            <ul className="space-y-2">
-              <li className="hover:text-gray-300 cursor-pointer">Home</li>
-              <li className="hover:text-gray-300 cursor-pointer">About</li>
-              <li className="hover:text-gray-300 cursor-pointer">Contact</li>
-            </ul>
+          {/* Social Links */}
+          <div className="flex flex-col items-center">
+            <h1 className="text-lg font-semibold mb-2">বিস্তারিত জানতে ভিজিট করুন</h1>
+            <div className="flex space-x-4">
+              <a
+                href="https://www.facebook.com/share/1AKEB2dger/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook size={24} className="cursor-pointer hover:text-gray-300" />
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={24} className="cursor-pointer hover:text-gray-300" />
+              </a>
+              <a
+                href="https://youtube.com/channel/UCVvTocZ-8LLscjNf2qav7hQ?si=TatCYF9m0o2c7On_"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube size={24} className="cursor-pointer hover:text-gray-300 text-red-500" />
+              </a>
+              <a
+                href="https://wa.me/8801918976686"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={24} className="cursor-pointer hover:text-gray-300 text-green-500" />
+              </a>
+            </div>
           </div>
 
           {/* Admission Information */}
           <div>
             <h2 className="text-lg font-semibold mb-3">ভর্তি চলছে!</h2>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-300 whitespace-pre-line">
               ✅ **সফলতার ৬ষ্ঠ বছর**  
               ✅ **অনলাইনে ও অফলাইনে পাঠদান**  
               ✅ **সাত বছরে দাওরায়ে হাদীস (মাওলানা কোর্স)**  
@@ -43,23 +64,13 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Contact & Social Media */}
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center border-t border-gray-600 pt-4">
-          <div className="text-center md:text-left text-sm text-gray-300">
-            <p>📞 **মুফতি আফজাল হুসাইন ফারুকী**</p>
-            <p>📱 ০১৯১৮-৯৭৬৬৮৬ | ০১৭৮৯-৪৮২৫৮৫</p>
-          </div>
-
-          <div className="flex space-x-4 mt-3 md:mt-0">
-            <FaFacebook size={24} className="cursor-pointer hover:text-gray-300" />
-            <FaTwitter size={24} className="cursor-pointer hover:text-gray-300" />
-            <FaYoutube size={24} className="cursor-pointer hover:text-gray-300" />
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-center text-sm text-gray-300 mt-4">
-          © 2025 মারকাযুল উলূম নৈশ মাদরাসা | সর্বস্বত্ব সংরক্ষিত
+        {/* Contact & Copyright */}
+        <div className="mt-6 border-t border-gray-600 pt-4 text-center space-y-2">
+          <p className="text-sm text-gray-300 font-semibold">📞 মুফতি আফজাল হুসাইন ফারুকী</p>
+          <p className="text-sm text-gray-300">📱 ০১৯১৮-৯৭৬৬৮৬ | ০১৭৮৯-৪৮২৫৮৫</p>
+          <p className="text-sm text-gray-300 mt-4">
+            © 2025 মারকাযুল উলূম নৈশ মাদরাসা | সর্বস্বত্ব সংরক্ষিত
+          </p>
         </div>
       </div>
     </footer>

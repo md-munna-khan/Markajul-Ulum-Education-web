@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS
 
+// Sample data for graduates
 const graduates = [
   {
     name: "আহমদ আসিফ আল রশীদ সউদ",
@@ -51,9 +54,13 @@ const graduates = [
   }
 ];
 
+// GraduateCard Component
 const GraduateCard = ({ graduate }) => {
   return (
-    <div className="border rounded-lg shadow-md p-4 bg-white text-center">
+    <div
+      className="border rounded-lg shadow-md p-4 bg-white text-center"
+      data-aos="zoom-in" // AOS animation for fade-up effect
+    >
       <h2 className="text-xl font-bold text-blue-600">{graduate.name}</h2>
       <p className="text-gray-700"><strong>পিতা:</strong> {graduate.father}</p>
       <p className="text-gray-700"><strong>পেশা:</strong> {graduate.profession}</p>
@@ -62,10 +69,26 @@ const GraduateCard = ({ graduate }) => {
   );
 };
 
+// GraduateList Component
 const GraduateList = () => {
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Duration of the animation
+      once: false, // The animation happens only once
+    });
+
+    return () => {
+      // Cleanup AOS when component is unmounted
+      AOS.refresh();
+    };
+  }, []);
+
   return (
     <div className="p-6">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">দাওরা ফারেগীন ২০২৫</h1>
+      <h1 className="text-4xl font-bold text-center text-gray-800 mb-6">
+        দাওরা ফারেগীন ২০২৫
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {graduates.map((graduate, index) => (
           <GraduateCard key={index} graduate={graduate} />
